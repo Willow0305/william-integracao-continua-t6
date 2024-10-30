@@ -19,5 +19,5 @@ jobs:
         uses: johnbeynon/render-deploy-action@master
         with:
           service-id: ${{ secrets.RENDER_SERVICE_ID }}
-          api-key: ${{ secrets.RENDER_API_KEY }}
+          api-key: ${{ secrets.RENDER_KEY_API }}
           wait-for-success: true
