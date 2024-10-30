@@ -212,3 +212,25 @@ A demonstração de uso das ferramentas e tecnologias abordadas na capacitação
 - [Diagrama Entidade Relacionamento](https://github.com/webacademyufac/sgcmdocs#diagrama-entidade-relacionamento)
 
 </details>
+
+## Atividades práticas
+
+1. [DUPLA] Criar workflows para integração e implantação contínua para o projeto front-end utilizando o GitHub Actions.
+
+    - Comando para executar os testes: `ng test --browsers=ChromeHeadless --no-watch`
+    - Comando para compilar o projeto: `ng build`
+    - A implantação pode ser feita em qualquer plataforma. Exemplos:
+      - Render (com Docker, a exemplo do que foi feito para aplicação back-end)
+        - Dockerfile já está disponível no diretório do projeto front-end.
+      - Netlify (não tem suporte para Docker): <https://www.netlify.com/>
+      - Vercel (não tem suporte para Docker): <https://vercel.com/>
+    - Antes do _**job**_ de _**deploy**_, deve ser executado o workflow de integração contínua do front-end.
+    - O _**job**_ de _**deploy**_ deve ser executado apenas se o _**job**_ do CI do front-end for executado com sucesso.
+    - **ATENÇÃO**:
+      - Para executar os comandos `ng test` e `ng build` no GitHub Actions, é necessário configurar o Node.js e o Angular CLI no ambiente de execução, além de instalar as dependências do projeto.
+      - Configurar a constante `API_URL` no arquivo `environment.ts` do projeto front-end.
+      - Modificar as configurações de CORS no back-end para adicionar o host da aplicação front-end em produção.
+      - A implantação deve ser feita obrigatoriamente por meio do GitHub Actions.
+
+    - Link da atividade: <https://classroom.github.com/a/jHeWW-3U>
+    - Entrega: 01/11/2024 - 23:59
